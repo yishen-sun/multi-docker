@@ -17,3 +17,7 @@ after_success:
   # Login to thr docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
+  - docker push yishensun/multi-client
+  - docker push yishensun/multi-nginx
+  - docker push yishensun/multi-server
+  - docker push yishensun/multi-worker
