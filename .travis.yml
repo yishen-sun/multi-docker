@@ -14,3 +14,6 @@ after_success:
   - docker build -t yishensun/multi-nginx ./nginx
   - docker build -t yishensun/multi-server ./server
   - docker build -t yishensun/multi-worker ./worker
+  # Login to thr docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
